@@ -16,6 +16,9 @@
 		B7D4E94F2839A85300F6CD92 /* Money_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E94E2839A85300F6CD92 /* Money_ManagementTests.swift */; };
 		B7D4E9592839A85300F6CD92 /* Money_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9582839A85300F6CD92 /* Money_ManagementUITests.swift */; };
 		B7D4E95B2839A85300F6CD92 /* Money_ManagementUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E95A2839A85300F6CD92 /* Money_ManagementUITestsLaunchTests.swift */; };
+		B7D4E9682839A88D00F6CD92 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9672839A88D00F6CD92 /* ListViewController.swift */; };
+		B7D4E96A2839A8AF00F6CD92 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9692839A8AF00F6CD92 /* RegisterViewController.swift */; };
+		B7D4E96C2839A8CB00F6CD92 /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E96B2839A8CB00F6CD92 /* ManagementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		B7D4E9542839A85300F6CD92 /* Money ManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Money ManagementUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D4E9582839A85300F6CD92 /* Money_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money_ManagementUITests.swift; sourceTree = "<group>"; };
 		B7D4E95A2839A85300F6CD92 /* Money_ManagementUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money_ManagementUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B7D4E9672839A88D00F6CD92 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B7D4E9692839A8AF00F6CD92 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B7D4E96B2839A8CB00F6CD92 /* ManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				B7D4E9372839A85000F6CD92 /* AppDelegate.swift */,
 				B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */,
 				B7D4E93B2839A85000F6CD92 /* ViewController.swift */,
+				B7D4E9672839A88D00F6CD92 /* ListViewController.swift */,
+				B7D4E9692839A8AF00F6CD92 /* RegisterViewController.swift */,
+				B7D4E96B2839A8CB00F6CD92 /* ManagementViewController.swift */,
 				B7D4E93D2839A85000F6CD92 /* Main.storyboard */,
 				B7D4E9402839A85300F6CD92 /* Assets.xcassets */,
 				B7D4E9422839A85300F6CD92 /* LaunchScreen.storyboard */,
@@ -259,7 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D4E93C2839A85000F6CD92 /* ViewController.swift in Sources */,
+				B7D4E96C2839A8CB00F6CD92 /* ManagementViewController.swift in Sources */,
+				B7D4E96A2839A8AF00F6CD92 /* RegisterViewController.swift in Sources */,
 				B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */,
+				B7D4E9682839A88D00F6CD92 /* ListViewController.swift in Sources */,
 				B7D4E93A2839A85000F6CD92 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
