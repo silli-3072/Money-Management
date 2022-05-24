@@ -14,27 +14,30 @@ class RegisterViewController: FormViewController {
         super.viewDidLoad()
 
         form +++ Section()
-            <<< TextRow("data"){
+           <<< DateInlineRow("data"){
                 $0.title = "日付"
-                $0.placeholder = "ここに書いてね"
+                //$0.value =  登録日を取得したい
+           }.onChange() { row in
+                print(row.value!)
         }
         
         form +++ Section()
-            <<< TextRow("method"){
-                $0.title = "支払い方法"
-                $0.placeholder = "ここに書いてね"
+          <<< PushRow<String>("method"){
+              $0.title = "支払い方法"
+              $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
+              $0.value = "現金"
         }
         
         form +++ Section()
-            <<< TextRow("amountofmoney"){
+            <<< IntRow("amountofmoney"){
                 $0.title = "金額"
-                $0.placeholder = "ここに書いてね"
         }
         
         form +++ Section()
-            <<< TextRow("classification"){
+            <<< PushRow<String>("classification"){
                 $0.title = "分類"
-                $0.placeholder = "ここに書いてね"
+                $0.options = ["食費","交通費","交際費","娯楽費","被服費","その他"]
+                $0.value = "食費"
         }
         
         
