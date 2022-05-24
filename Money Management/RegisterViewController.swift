@@ -6,13 +6,46 @@
 //
 
 import UIKit
+import Eureka
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        form +++ Section()
+            <<< TextRow("data"){
+                $0.title = "日付"
+                $0.placeholder = "ここに書いてね"
+        }
+        
+        form +++ Section()
+            <<< TextRow("method"){
+                $0.title = "支払い方法"
+                $0.placeholder = "ここに書いてね"
+        }
+        
+        form +++ Section()
+            <<< TextRow("amountofmoney"){
+                $0.title = "金額"
+                $0.placeholder = "ここに書いてね"
+        }
+        
+        form +++ Section()
+            <<< TextRow("classification"){
+                $0.title = "分類"
+                $0.placeholder = "ここに書いてね"
+        }
+        
+        
+    }
+    
+    @IBAction func cancelButton(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButton(){
+        self.dismiss(animated: true, completion: nil)
     }
     
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B74048DE283CA16700535916 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = B74048DD283CA16700535916 /* Eureka */; };
 		B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9372839A85000F6CD92 /* AppDelegate.swift */; };
 		B7D4E93A2839A85000F6CD92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */; };
 		B7D4E93C2839A85000F6CD92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E93B2839A85000F6CD92 /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74048DE283CA16700535916 /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +154,9 @@
 			dependencies = (
 			);
 			name = "Money Management";
+			packageProductDependencies = (
+				B74048DD283CA16700535916 /* Eureka */,
+			);
 			productName = "Money Management";
 			productReference = B7D4E9342839A85000F6CD92 /* Money Management.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +229,9 @@
 				Base,
 			);
 			mainGroup = B7D4E92B2839A85000F6CD92;
+			packageReferences = (
+				B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */,
+			);
 			productRefGroup = B7D4E9352839A85000F6CD92 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -614,6 +622,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/Eureka";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B74048DD283CA16700535916 /* Eureka */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */;
+			productName = Eureka;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7D4E92C2839A85000F6CD92 /* Project object */;
 }

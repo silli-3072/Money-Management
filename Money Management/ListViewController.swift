@@ -9,6 +9,12 @@ import UIKit
 
 class ListViewController: UIViewController {
     
+    @IBOutlet var ListMoneyLabell1: UILabel!
+    @IBOutlet var ListMoneyLabell2: UILabel!
+    @IBOutlet var ListMoneyLabell3: UILabel!
+    @IBOutlet var ListMoneyLabell4: UILabel!
+    @IBOutlet var ListMoneyLabell5: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
