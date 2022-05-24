@@ -125,16 +125,6 @@
                     <view key="view" contentMode="scaleToFill" id="5fk-Ni-Fq5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ttO-m0-dVd">
-                                <rect key="frame" x="33" y="96" width="349" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="収入"/>
-                                    <segment title="支出"/>
-                                </segments>
-                            </segmentedControl>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7th-Yz-lYI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>

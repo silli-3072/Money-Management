@@ -12,6 +12,12 @@ class RegisterViewController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        form +++ Section()
+        <<< SegmentedRow<String>("income"){
+            $0.options = ["支出", "収入"]
+            $0.value = "支出"
+        }
 
         form +++ Section()
            <<< DateInlineRow("data"){
