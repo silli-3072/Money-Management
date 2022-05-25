@@ -9,6 +9,8 @@ import UIKit
 import Eureka
 
 class RegisterViewController: FormViewController {
+    
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,14 +19,16 @@ class RegisterViewController: FormViewController {
         <<< SegmentedRow<String>("income"){
             $0.options = ["支出", "収入"]
             $0.value = "支出"
+            
+            UserDefaults.standard.bool(forKey: "isIncome")
         }
 
         form +++ Section()
            <<< DateInlineRow("data"){
                 $0.title = "日付"
                 //$0.value =  登録日を取得したい
-           }.onChange() { row in
-                print(row.value!)
+               
+               UserDefaults.standard.data(forKey: "date")
         }
         
         form +++ Section()
@@ -32,11 +36,15 @@ class RegisterViewController: FormViewController {
               $0.title = "支払い方法"
               $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
               $0.value = "現金"
+              
+              UserDefaults.standard.string(forKey: "paymentMethod")
         }
         
         form +++ Section()
             <<< IntRow("amountofmoney"){
                 $0.title = "金額"
+                
+                UserDefaults.standard.string(forKey: "paymentMethod")
         }
         
         form +++ Section()
@@ -44,6 +52,8 @@ class RegisterViewController: FormViewController {
                 $0.title = "分類"
                 $0.options = ["食費","交通費","交際費","娯楽費","被服費","その他"]
                 $0.value = "食費"
+                
+                UserDefaults.standard.string(forKey: "group")
         }
         
         
