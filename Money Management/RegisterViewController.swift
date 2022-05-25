@@ -28,7 +28,7 @@ class RegisterViewController: FormViewController {
                 $0.title = "日付"
                 //$0.value =  登録日を取得したい
                
-               UserDefaults.standard.data(forKey: "date")
+               UserDefaults.standard.data(forKey: "Date")
         }
         
         form +++ Section()
@@ -37,14 +37,14 @@ class RegisterViewController: FormViewController {
               $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
               $0.value = "現金"
               
-              UserDefaults.standard.string(forKey: "paymentMethod")
+              UserDefaults.standard.string(forKey: "PaymentMethod")
         }
         
         form +++ Section()
             <<< IntRow("amountofmoney"){
                 $0.title = "金額"
                 
-                UserDefaults.standard.string(forKey: "paymentMethod")
+                UserDefaults.standard.string(forKey: "Value")
         }
         
         form +++ Section()
@@ -53,7 +53,7 @@ class RegisterViewController: FormViewController {
                 $0.options = ["食費","交通費","交際費","娯楽費","被服費","その他"]
                 $0.value = "食費"
                 
-                UserDefaults.standard.string(forKey: "group")
+                UserDefaults.standard.string(forKey: "Group")
         }
         
         
