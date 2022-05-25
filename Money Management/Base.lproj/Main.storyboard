@@ -165,7 +165,7 @@
                                     <segment title="支出"/>
                                 </segments>
                                 <connections>
-                                    <action selector="SegmentedWithSender:" destination="crf-b7-ezB" eventType="touchUpInside" id="Ysj-pB-7aa"/>
+                                    <action selector="SegmentedWithSender:" destination="crf-b7-ezB" eventType="valueChanged" id="ljY-b8-TgJ"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="合計" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsf-Pd-f3f">
@@ -210,13 +210,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0円" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdT-ug-5cS">
-                                <rect key="frame" x="193" y="659" width="189" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食費" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q6-Sz-dV7">
                                 <rect key="frame" x="33" y="419" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -231,7 +224,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="被服費" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-5E-UgX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="その他" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaa-5E-UgX">
                                 <rect key="frame" x="33" y="611" width="100" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -252,13 +245,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="その他" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHV-PA-2IQ">
-                                <rect key="frame" x="33" y="659" width="100" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0円" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cp0-c4-LHD">
                                 <rect key="frame" x="193" y="419" width="189" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -267,12 +253,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywf-DT-gCd">
-                                <rect key="frame" x="20" y="99" width="362" height="40"/>
+                                <rect key="frame" x="121" y="99" width="172" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IF-Lf-sg8">
+                                <rect key="frame" x="53" y="99" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="＜"/>
+                                <connections>
+                                    <action selector="BackMonthButton" destination="crf-b7-ezB" eventType="touchUpInside" id="kKt-Au-Kfo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xS-ao-9hV">
+                                <rect key="frame" x="301" y="99" width="60" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="＞"/>
+                                <connections>
+                                    <action selector="NextMonthButton" destination="crf-b7-ezB" eventType="touchUpInside" id="sl7-02-dfB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uJu-lF-RBh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -287,20 +293,19 @@
                         <outlet property="class3Label" destination="9JF-Vz-Y2x" id="gog-Y5-ScI"/>
                         <outlet property="class4Label" destination="wnH-KK-mkK" id="mhH-WZ-eT1"/>
                         <outlet property="class5Label" destination="Oaa-5E-UgX" id="dk0-Bs-08G"/>
-                        <outlet property="class6Label" destination="pHV-PA-2IQ" id="Hg8-1T-DSE"/>
                         <outlet property="moneyclass1Label" destination="cp0-c4-LHD" id="L6a-yZ-l8a"/>
                         <outlet property="moneyclass2Label" destination="jxp-KX-Wj5" id="HiX-5K-GIR"/>
                         <outlet property="moneyclass3Label" destination="JjO-AP-HCT" id="crH-YA-BSZ"/>
                         <outlet property="moneyclass4Label" destination="Wjs-7h-AK8" id="du4-8x-MZ5"/>
                         <outlet property="moneyclass5Label" destination="v3q-Pw-ovJ" id="eBm-aL-JUI"/>
-                        <outlet property="moneyclass6Label" destination="MdT-ug-5cS" id="ezv-0w-UaE"/>
+                        <outlet property="monthLabel" destination="Ywf-DT-gCd" id="MbD-nd-49k"/>
                         <outlet property="totalLabel" destination="Lsf-Pd-f3f" id="KSC-Vr-4MW"/>
                         <outlet property="totalmoneyLabel" destination="2Kf-8y-HdW" id="CZd-UW-iKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bR-59-wRL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2384" y="889"/>
+            <point key="canvasLocation" x="2382.608695652174" y="888.61607142857144"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eNA-DE-jVb">
@@ -325,7 +330,7 @@
         <scene sceneID="1hL-3P-lJa">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WF5-ER-kmf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="登録" id="g31-7D-EXn"/>
+                    <tabBarItem key="tabBarItem" title="登録" image="Logo1" id="g31-7D-EXn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gxt-7S-Utt">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -344,7 +349,7 @@
         <scene sceneID="d7e-cW-0x1">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x3S-tH-3i4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="管理" id="eaV-sa-Goh"/>
+                    <tabBarItem key="tabBarItem" title="管理" image="Logo2" id="eaV-sa-Goh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b5V-Sr-EIY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -379,6 +384,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Logo1" width="32" height="32"/>
+        <image name="Logo2" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
