@@ -11,6 +11,7 @@ import Eureka
 class RegisterViewController: FormViewController {
     
     let userDefaults = UserDefaults.standard
+    //let day = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,9 +25,9 @@ class RegisterViewController: FormViewController {
         }
 
         form +++ Section()
-           <<< DateInlineRow("data"){
+           <<< DateInlineRow("date"){
                 $0.title = "日付"
-                //$0.value =  登録日を取得したい
+                //$0.value = "Date"
                
                UserDefaults.standard.data(forKey: "Date")
         }
@@ -61,10 +62,17 @@ class RegisterViewController: FormViewController {
     
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
+        
+        UserDefaults.standard.removeObject(forKey: "isIncome")
+        UserDefaults.standard.removeObject(forKey: "Date")
+        UserDefaults.standard.removeObject(forKey: "PaymentMethod")
+        UserDefaults.standard.removeObject(forKey: "Value")
+        UserDefaults.standard.removeObject(forKey: "Group")
     }
     
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
+        
     }
     
 

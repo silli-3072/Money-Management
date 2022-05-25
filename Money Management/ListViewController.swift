@@ -9,6 +9,8 @@ import UIKit
 
 class ListViewController: UIViewController {
     
+    let userDefaults = UserDefaults.standard
+    
     @IBOutlet var ListMoneyLabell1: UILabel!
     @IBOutlet var ListMoneyLabell2: UILabel!
     @IBOutlet var ListMoneyLabell3: UILabel!
