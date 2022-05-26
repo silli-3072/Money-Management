@@ -53,7 +53,8 @@ class RegisterViewController: FormViewController {
                 <<< IntRow("amountofmoney"){
                     $0.title = "金額"
                     
-                    UserDefaults.standard.string(forKey: "Value")
+                    //integer = int ??
+                    UserDefaults.standard.integer(forKey: "Value")
                 }
                 
             form +++ Section()
