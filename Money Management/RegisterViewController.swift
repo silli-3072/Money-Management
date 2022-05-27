@@ -20,17 +20,23 @@ class RegisterViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+            
+    }
+        
+   override func viewWillAppear(animated: Bool){
+        
         form +++ Section()
         <<< SegmentedRow<String>("income"){ row in
             row.options = ["支出", "収入"]
             row.value = "支出"
-           
-
-            UserDefaults.standard.bool(forKey: "isIncome")
-            
+        }.onChange{[unowned self] row in
+            self.incomejudge = row.value ?? "選択なし"
+            print(self.incomejudge)
+            row.value = incomejudge
         }
         
-            
+        UserDefaults.standard.bool(forKey: "isIncome")
+        
         if incomejudge == "支出" {
             form +++ Section()
                 <<< DateInlineRow("date"){
@@ -39,7 +45,7 @@ class RegisterViewController: FormViewController {
                     
                     UserDefaults.standard.data(forKey: "Date")
             }
-                
+        
             form +++ Section()
                 <<< PushRow<String>("method"){
                     $0.title = "支払い方法"
@@ -105,10 +111,9 @@ class RegisterViewController: FormViewController {
             }
                 
         }
-            
+        
     }
-    
-    
+            
     
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
