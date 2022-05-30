@@ -20,6 +20,9 @@ class RegisterViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    func ButtonSegment(){
         form +++ Section()
         <<< SegmentedRow<String>("income"){ row in
             row.options = ["支出", "収入"]

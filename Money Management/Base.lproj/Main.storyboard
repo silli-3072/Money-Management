@@ -283,10 +283,7 @@
                         <viewLayoutGuide key="safeArea" id="uJu-lF-RBh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="管理" id="ZI3-cm-dam">
-                        <barButtonItem key="leftBarButtonItem" title="前月" id="Jxf-2z-IkU"/>
-                        <barButtonItem key="rightBarButtonItem" title="次月" id="f93-gm-a1k"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="管理" id="ZI3-cm-dam"/>
                     <connections>
                         <outlet property="class1Label" destination="3Q6-Sz-dV7" id="qsg-MA-AWe"/>
                         <outlet property="class2Label" destination="3nD-xU-AVT" id="Ovy-td-jzL"/>
