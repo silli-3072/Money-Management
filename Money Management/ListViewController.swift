@@ -24,6 +24,12 @@ class ListViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        
+        let amountofmoney: Int = userDefaults.integer(forKey: "Value")
+        ListMoneyLabell1.text = amountofmoney.description
+        
+    }
 
     /*
     // MARK: - Navigation

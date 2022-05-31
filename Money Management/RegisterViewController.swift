@@ -13,6 +13,7 @@ class RegisterViewController: FormViewController {
     let userDefaults = UserDefaults.standard
     
     var incomejudge: String = ""
+    var amountofmoney: Int = 0
     
     
     //let day = Date()
@@ -20,18 +21,21 @@ class RegisterViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    func ButtonSegment(){
         form +++ Section()
         <<< SegmentedRow<String>("income"){ row in
             row.options = ["支出", "収入"]
             row.value = "支出"
-        }.onChange{[unowned self] row in
+        } .onChange {[unowned self] row in
             self.incomejudge = row.value ?? "選択なし"
             print(self.incomejudge)
             row.value = incomejudge
-            
+        }
+        
+        UserDefaults.standard.bool(forKey: "isIncome")
+        
+    }
+    
+        func cellUpdate(){
             if incomejudge == "支出" {
                 form +++ Section()
                     <<< DateInlineRow("date"){
@@ -54,7 +58,7 @@ class RegisterViewController: FormViewController {
                     <<< IntRow("amountofmoney"){
                         $0.title = "金額"
                         
-                        //integer = int ??
+                        
                         UserDefaults.standard.integer(forKey: "Value")
                     }
                     
@@ -87,8 +91,8 @@ class RegisterViewController: FormViewController {
                 form +++ Section()
                     <<< IntRow("amountofmoney"){
                         $0.title = "金額"
-                            
-                        UserDefaults.standard.string(forKey: "Value")
+                        
+                        userDefaults.set(amountofmoney, forKey: "Value")
                 }
                     
                 form +++ Section()
@@ -107,10 +111,6 @@ class RegisterViewController: FormViewController {
                     
             }
         }
-        
-        UserDefaults.standard.bool(forKey: "isIncome")
-        
-    }
     
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
