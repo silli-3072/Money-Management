@@ -35,82 +35,80 @@ class RegisterViewController: FormViewController {
         
     }
     
-        func cellUpdate(){
-            if incomejudge == "支出" {
-                form +++ Section()
-                    <<< DateInlineRow("date"){
-                        $0.title = "日付"
-                        //$0.value = "Date"
+    override func didReceiveMemoryWarning(){
+        if incomejudge == "支出" {
+            form +++ Section()
+                <<< DateInlineRow("date"){
+                    $0.title = "日付"
+                    //$0.value = "Date"
                         
-                        UserDefaults.standard.data(forKey: "Date")
-                }
+                    UserDefaults.standard.data(forKey: "Date")
+            }
             
-                form +++ Section()
-                    <<< PushRow<String>("method"){
-                        $0.title = "支払い方法"
-                        $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
-                        $0.value = "現金"
+                <<< PushRow<String>("method"){
+                    $0.title = "支払い方法"
+                    $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
+                    $0.value = "現金"
                           
-                        UserDefaults.standard.string(forKey: "PaymentMethod")
-                    }
-                    
-                form +++ Section()
-                    <<< IntRow("amountofmoney"){
-                        $0.title = "金額"
-                        
-                        
-                        UserDefaults.standard.integer(forKey: "Value")
-                    }
-                    
-                form +++ Section()
-                    <<< PushRow<String>("classification"){
-                        $0.title = "分類"
-                        $0.options = ["食費","交通費","交際費","娯楽費","被服費","その他"]
-                        $0.value = "食費"
-                            
-                        UserDefaults.standard.string(forKey: "Group")
-                    }
-            } else if incomejudge == "収入" {
-                form +++ Section()
-                    <<< DateInlineRow("date"){
-                        $0.title = "日付"
-                        //$0.value = "Date"
-                           
-                        UserDefaults.standard.data(forKey: "Date")
-                }
-                    
-                form +++ Section()
-                    <<< PushRow<String>("register"){
-                        $0.title = "登録先"
-                        $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
-                        $0.value = "現金"
-                            
-                        UserDefaults.standard.string(forKey: "Register")
-                }
-                    
-                form +++ Section()
-                    <<< IntRow("amountofmoney"){
-                        $0.title = "金額"
-                        
-                        userDefaults.set(amountofmoney, forKey: "Value")
-                }
-                    
-                form +++ Section()
-                    <<< PushRow<String>("incomeclassification"){
-                        $0.title = "分類"
-                        $0.options = ["給料","おこづかい","臨時収入","副業","その他"]
-                        $0.value = "給料"
-                    
-                        UserDefaults.standard.string(forKey: "IncomeGroup")
-                }
-                    
-                form +++ Section()
-                     <<< SwitchRow("switchbutton"){
-                        $0.title = "現金残高から引く"
-                }
+                    UserDefaults.standard.string(forKey: "PaymentMethod")
                     
             }
+                
+                <<< IntRow("amountofmoney"){
+                    $0.title = "金額"
+                        
+                    UserDefaults.standard.integer(forKey: "Value")
+                    
+            }
+                
+                <<< PushRow<String>("classification"){
+                    $0.title = "分類"
+                    $0.options = ["食費","交通費","交際費","娯楽費","被服費","その他"]
+                    $0.value = "食費"
+                            
+                    UserDefaults.standard.string(forKey: "Group")
+            }
+        } else if incomejudge == "収入" {
+            form +++ Section()
+                <<< DateInlineRow("date"){
+                    $0.title = "日付"
+                    //$0.value = "Date"
+                           
+                    UserDefaults.standard.data(forKey: "Date")
+            }
+                    
+                <<< PushRow<String>("register"){
+                    $0.title = "登録先"
+                    $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
+                    $0.value = "現金"
+                            
+                    UserDefaults.standard.string(forKey: "Register")
+            }
+                    
+                <<< IntRow("amountofmoney"){
+                    $0.title = "金額"
+                        
+                    userDefaults.set(amountofmoney, forKey: "Value")
+                
+            }
+                    
+                <<< PushRow<String>("incomeclassification"){
+                    $0.title = "分類"
+                    $0.options = ["給料","おこづかい","臨時収入","副業","その他"]
+                    $0.value = "給料"
+                    
+                    UserDefaults.standard.string(forKey: "IncomeGroup")
+            }
+                    
+      
+                <<< SwitchRow("switchbutton"){
+                    $0.title = "現金残高から引く"
+                
+            }
+                    
         }
+        
+    }
     
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
