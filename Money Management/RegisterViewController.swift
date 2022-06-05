@@ -6,118 +6,100 @@
 //
 
 import UIKit
-import Eureka
 
-class RegisterViewController: FormViewController {
+class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    let userDefaults = UserDefaults.standard
+    @IBOutlet var ClassificationLabel1: UILabel!
+    @IBOutlet var ClassificationLabel2: UILabel!
+    @IBOutlet var ClassificationLabel3: UILabel!
+    @IBOutlet var ClassificationLabel4: UILabel!
+    @IBOutlet var ClassificationLabel5: UILabel!
     
-    var incomejudge: String = ""
-    var amountofmoney: Int = 0
+    @IBOutlet var moneyTextField: UITextField!
+    
+    @IBOutlet var MethodPickerView: UIPickerView!
+    
+    @IBOutlet var chargeselect: UISwitch!
+    
+    let methoddataList = ["現金","キャッシュレス","交通ICカード","その他"]
+    let SpendingClassdataList = ["食費","交通費","交際費","娯楽費","その他"]
+    let IncomeClassdataList = ["給料","お小遣い","臨時収入","副業","その他"]
     
     
-    //let day = Date()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        form +++ Section()
-        <<< SegmentedRow<String>("income"){ row in
-            row.options = ["支出", "収入"]
-            row.value = "支出"
-        } .onChange {[unowned self] row in
-            self.incomejudge = row.value ?? "選択なし"
-            print(self.incomejudge)
-            row.value = incomejudge
-        }
+        MethodPickerView.delegate = self
+        MethodPickerView.dataSource = self
         
-        UserDefaults.standard.bool(forKey: "isIncome")
+        ClassificationLabel5.isHidden = true
+        chargeselect.isHidden = true
+        
+        moneyTextField.keyboardType = UIKeyboardType.numberPad
         
     }
     
-    override func didReceiveMemoryWarning(){
-        if incomejudge == "支出" {
-            form +++ Section()
-                <<< DateInlineRow("date"){
-                    $0.title = "日付"
-                    //$0.value = "Date"
-                        
-                    UserDefaults.standard.data(forKey: "Date")
-            }
+    //キーボード以外をタップすることでキーボードを閉じるコード
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func Segmented(sender: UISegmentedControl){
+        switch sender.selectedSegmentIndex{
+        case 0:
+            ClassificationLabel1.text = "日付"
+            ClassificationLabel2.text = "支払い方法"
+            ClassificationLabel3.text = "金額"
+            ClassificationLabel4.text = "分類"
             
-                <<< PushRow<String>("method"){
-                    $0.title = "支払い方法"
-                    $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
-                    $0.value = "現金"
-                          
-                    UserDefaults.standard.string(forKey: "PaymentMethod")
-                    
-            }
-                
-                <<< IntRow("amountofmoney"){
-                    $0.title = "金額"
-                        
-                    UserDefaults.standard.integer(forKey: "Value")
-                    
-            }
-                
-                <<< PushRow<String>("classification"){
-                    $0.title = "分類"
-                    $0.options = ["食費","交通費","交際費","娯楽費","被服費","その他"]
-                    $0.value = "食費"
-                            
-                    UserDefaults.standard.string(forKey: "Group")
-            }
-        } else if incomejudge == "収入" {
-            form +++ Section()
-                <<< DateInlineRow("date"){
-                    $0.title = "日付"
-                    //$0.value = "Date"
-                           
-                    UserDefaults.standard.data(forKey: "Date")
-            }
-                    
-                <<< PushRow<String>("register"){
-                    $0.title = "登録先"
-                    $0.options = ["現金","キャッシュレス決済","交通ICカード","その他"]
-                    $0.value = "現金"
-                            
-                    UserDefaults.standard.string(forKey: "Register")
-            }
-                    
-                <<< IntRow("amountofmoney"){
-                    $0.title = "金額"
-                        
-                    userDefaults.set(amountofmoney, forKey: "Value")
-                
-            }
-                    
-                <<< PushRow<String>("incomeclassification"){
-                    $0.title = "分類"
-                    $0.options = ["給料","おこづかい","臨時収入","副業","その他"]
-                    $0.value = "給料"
-                    
-                    UserDefaults.standard.string(forKey: "IncomeGroup")
-            }
-                    
-      
-                <<< SwitchRow("switchbutton"){
-                    $0.title = "現金残高から引く"
-                
-            }
-                    
+            ClassificationLabel5.isHidden = true
+            chargeselect.isHidden = true
+            
+        case 1:
+            ClassificationLabel1.text = "日付"
+            ClassificationLabel2.text = "登録先"
+            ClassificationLabel3.text = "金額"
+            ClassificationLabel4.text = "分類"
+            ClassificationLabel5.text = "現金残高から引く"
+            
+            ClassificationLabel5.isHidden = false
+            chargeselect.isHidden = false
+            
+        default:
+            print("該当なし")
+        }
+    }
+    
+    
+    
+    func MethodPickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if pickerView == MethodPickerView {
+            return methoddataList.count
         }
         
+        return 0
     }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == MethodPickerView {
+            return methoddataList[row]
+        }
+        
+        return nil
+    }
+    
+    
     
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
         
-        UserDefaults.standard.removeObject(forKey: "isIncome")
-        UserDefaults.standard.removeObject(forKey: "Date")
-        UserDefaults.standard.removeObject(forKey: "PaymentMethod")
-        UserDefaults.standard.removeObject(forKey: "Value")
-        UserDefaults.standard.removeObject(forKey: "Group")
     }
     
     @IBAction func saveButton(){
@@ -125,15 +107,15 @@ class RegisterViewController: FormViewController {
         
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

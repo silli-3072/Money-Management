@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82EF8F86284C3970003384BC /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F85284C3970003384BC /* Eureka */; };
 		B74048DE283CA16700535916 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = B74048DD283CA16700535916 /* Eureka */; };
 		B74048E2284706D200535916 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B74048E1284706D200535916 /* icon.png */; };
 		B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9372839A85000F6CD92 /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B74048DE283CA16700535916 /* Eureka in Frameworks */,
+				82EF8F86284C3970003384BC /* Eureka in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +161,7 @@
 			name = "Money Management";
 			packageProductDependencies = (
 				B74048DD283CA16700535916 /* Eureka */,
+				82EF8F85284C3970003384BC /* Eureka */,
 			);
 			productName = "Money Management";
 			productReference = B7D4E9342839A85000F6CD92 /* Money Management.app */;
@@ -234,6 +237,7 @@
 			mainGroup = B7D4E92B2839A85000F6CD92;
 			packageReferences = (
 				B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */,
+				82EF8F84284C3970003384BC /* XCRemoteSwiftPackageReference "Eureka" */,
 			);
 			productRefGroup = B7D4E9352839A85000F6CD92 /* Products */;
 			projectDirPath = "";
@@ -459,11 +463,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 35J88B9SPN;
+				DEVELOPMENT_TEAM = 2K446D59RQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Money Management/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MoneyManagement;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -474,8 +480,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.harutyann.haruta.Money-Management";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.com.lifeistech.moneymanagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "L14-HarutaMinori-Develop";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,11 +494,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 35J88B9SPN;
+				DEVELOPMENT_TEAM = 2K446D59RQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Money Management/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MoneyManagement;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -502,8 +511,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.harutyann.haruta.Money-Management";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.com.lifeistech.moneymanagement;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "L14-HarutaMinori-Distribution";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -628,6 +638,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		82EF8F84284C3970003384BC /* XCRemoteSwiftPackageReference "Eureka" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/xmartlabs/Eureka";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/xmartlabs/Eureka";
@@ -639,6 +657,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		82EF8F85284C3970003384BC /* Eureka */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */;
+			productName = Eureka;
+		};
 		B74048DD283CA16700535916 /* Eureka */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */;

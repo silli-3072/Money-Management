@@ -26,7 +26,7 @@ class ManagementViewController: UIViewController {
     @IBOutlet var moneyclass4Label: UILabel!
     @IBOutlet var moneyclass5Label: UILabel!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +41,7 @@ class ManagementViewController: UIViewController {
             class3Label.text = "交際費"
             class4Label.text = "娯楽費"
             class5Label.text = "その他"
-        
+            
         case 1:
             class1Label.text = "給料"
             class2Label.text = "おこづかい"
