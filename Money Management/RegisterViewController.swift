@@ -116,6 +116,10 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return nil
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
     
     
     @IBAction func cancelButton(){
