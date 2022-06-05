@@ -18,6 +18,9 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet var moneyTextField: UITextField!
     
     @IBOutlet var MethodPickerView: UIPickerView!
+    @IBOutlet var IncomeClassPickerView: UIPickerView!
+    @IBOutlet var SpendingClassPickerView: UIPickerView!
+    
     
     @IBOutlet var chargeselect: UISwitch!
     
@@ -33,6 +36,12 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         MethodPickerView.delegate = self
         MethodPickerView.dataSource = self
+        
+        SpendingClassPickerView.delegate = self
+        SpendingClassPickerView.dataSource = self
+        
+        IncomeClassPickerView.delegate = self
+        IncomeClassPickerView.dataSource = self
         
         ClassificationLabel5.isHidden = true
         chargeselect.isHidden = true
@@ -83,6 +92,12 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         if pickerView == MethodPickerView {
             return methoddataList.count
         }
+        if pickerView == IncomeClassPickerView {
+            return IncomeClassdataList.count
+        }
+        if pickerView == SpendingClassPickerView {
+            return SpendingClassdataList.count
+        }
         
         return 0
     }
@@ -90,6 +105,12 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == MethodPickerView {
             return methoddataList[row]
+        }
+        if pickerView == IncomeClassPickerView {
+            return IncomeClassdataList[row]
+        }
+        if pickerView == SpendingClassPickerView {
+            return SpendingClassdataList[row]
         }
         
         return nil

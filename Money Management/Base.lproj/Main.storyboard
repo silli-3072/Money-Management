@@ -184,7 +184,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YHS-Dv-GzV">
-                                <rect key="frame" x="0.0" y="332" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="332" width="217" height="92"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-Qc-JCw">
+                                <rect key="frame" x="0.0" y="688" width="204" height="117"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-k8-swl">
+                                <rect key="frame" x="210" y="688" width="204" height="117"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -209,7 +217,9 @@
                         <outlet property="ClassificationLabel3" destination="zFv-8W-0JY" id="g0I-7d-RXQ"/>
                         <outlet property="ClassificationLabel4" destination="ach-nP-1iu" id="xdT-QL-W7O"/>
                         <outlet property="ClassificationLabel5" destination="Jq1-ht-1EL" id="DWP-We-fYg"/>
+                        <outlet property="IncomeClassPickerView" destination="eEb-k8-swl" id="sf5-Zx-ioD"/>
                         <outlet property="MethodPickerView" destination="YHS-Dv-GzV" id="b0M-Mv-VCK"/>
+                        <outlet property="SpendingClassPickerView" destination="Z99-Qc-JCw" id="lcm-R9-cry"/>
                         <outlet property="chargeselect" destination="Yuj-uW-pmT" id="tX8-Vz-qsk"/>
                         <outlet property="moneyTextField" destination="G85-Ty-zbg" id="AOE-zp-ZSq"/>
                     </connections>
