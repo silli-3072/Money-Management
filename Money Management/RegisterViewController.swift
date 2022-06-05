@@ -45,6 +45,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         ClassificationLabel5.isHidden = true
         chargeselect.isHidden = true
+        IncomeClassPickerView.isHidden = true
         
         moneyTextField.keyboardType = UIKeyboardType.numberPad
         
@@ -65,6 +66,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             ClassificationLabel5.isHidden = true
             chargeselect.isHidden = true
+            IncomeClassPickerView.isHidden = true
             
         case 1:
             ClassificationLabel1.text = "日付"
@@ -75,6 +77,9 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             
             ClassificationLabel5.isHidden = false
             chargeselect.isHidden = false
+            IncomeClassPickerView.isHidden = false
+            SpendingClassPickerView.isHidden = true
+            
             
         default:
             print("該当なし")
