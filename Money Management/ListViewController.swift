@@ -22,11 +22,6 @@ class ListViewController: UIViewController {
         
     }
     
-    override func viewWillAppear(_ animated: Bool){
-        let defaults = UserDefaults.standard
-        let value = defaults.string(forKey: "AddValue")
-        ListMoneyLabell1.text = value
-    }
     
 
     /*

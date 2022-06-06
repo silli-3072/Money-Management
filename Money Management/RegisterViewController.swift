@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import RealmSwift
 
-class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var ClassificationLabel1: UILabel!
     @IBOutlet var ClassificationLabel2: UILabel!
@@ -24,17 +25,25 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet var DatePicker:UIDatePicker!
     
+    @IBOutlet var chargeselect: UISwitch!
+    
     let methoddataList = ["現金","キャッシュレス","交通ICカード","その他"]
     let SpendingClassdataList = ["食費","交通費","交際費","娯楽費","その他"]
     let IncomeClassdataList = ["給料","お小遣い","臨時収入","副業","その他"]
     
+    var addmoneyList: Results<addmoney>!
     
-    @IBOutlet var chargeselect: UISwitch!
     
-    let defaults: UserDefaults = UserDefaults.standard
+    class addmoney: Object{
+        @Object dynamic var AddValue : Int? = nil
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let realm = try! Realm()
+        self.addmoneyList = realm.objects(addmoney.self)
         
         MethodPickerView.delegate = self
         MethodPickerView.dataSource = self
@@ -51,7 +60,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         moneyTextField.keyboardType = UIKeyboardType.numberPad
         
-        moneyTextField.delegate = self
         
     }
     
@@ -128,15 +136,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
-    @IBAction func addmoneytext(_ sender: Any){
-        let writtenmoney = moneyTextField.text! as NSString
-        let defaults = UserDefaults.standard
-        defaults.set(writtenmoney, forKey: "AddValue")
-        view.endEditing(true)
         
-    }
-    
     
     
     @IBAction func cancelButton(){
@@ -146,7 +146,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
-
         
     }
     
