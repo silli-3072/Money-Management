@@ -9,8 +9,6 @@ import UIKit
 
 class ListViewController: UIViewController {
     
-    let userDefaults = UserDefaults.standard
-    
     @IBOutlet var ListMoneyLabell1: UILabel!
     @IBOutlet var ListMoneyLabell2: UILabel!
     @IBOutlet var ListMoneyLabell3: UILabel!
@@ -18,18 +16,18 @@ class ListViewController: UIViewController {
     @IBOutlet var ListMoneyLabell5: UILabel!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
     }
     
     override func viewWillAppear(_ animated: Bool){
-        
-        let amountofmoney: Int = userDefaults.integer(forKey: "Value")
-        ListMoneyLabell1.text = amountofmoney.description
-        
+        let defaults = UserDefaults.standard
+        let value = defaults.string(forKey: "AddValue")
+        ListMoneyLabell1.text = value
     }
+    
 
     /*
     // MARK: - Navigation

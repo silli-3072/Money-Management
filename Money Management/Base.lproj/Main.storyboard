@@ -107,11 +107,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="一覧" id="WFV-hB-z91"/>
                     <connections>
-                        <outlet property="ListMoneyLabell1" destination="DqA-sm-b6R" id="jwT-ay-GfG"/>
-                        <outlet property="ListMoneyLabell2" destination="5qF-9U-h87" id="2MG-Ms-gWk"/>
-                        <outlet property="ListMoneyLabell3" destination="B64-D2-VrG" id="3Ms-nW-UL0"/>
-                        <outlet property="ListMoneyLabell4" destination="N8x-m5-iEj" id="Y8Y-yy-Imh"/>
-                        <outlet property="ListMoneyLabell5" destination="WUq-bm-Ad7" id="XeJ-JN-hd7"/>
+                        <outlet property="ListMoneyLabell1" destination="DqA-sm-b6R" id="KXC-Ds-Fy5"/>
+                        <outlet property="ListMoneyLabell2" destination="5qF-9U-h87" id="tog-Wz-AWa"/>
+                        <outlet property="ListMoneyLabell3" destination="B64-D2-VrG" id="s7m-5c-ig9"/>
+                        <outlet property="ListMoneyLabell4" destination="N8x-m5-iEj" id="3ll-Cc-UFw"/>
+                        <outlet property="ListMoneyLabell5" destination="WUq-bm-Ad7" id="Mgw-MG-uZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -167,10 +167,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G85-Ty-zbg">
-                                <rect key="frame" x="182" y="360" width="200" height="34"/>
+                                <rect key="frame" x="182" y="360" width="165" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="addmoneytext:" destination="2Ok-Ef-jhO" eventType="valueChanged" id="SSK-Jh-W1b"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="現金残高から引く" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jq1-ht-1EL">
                                 <rect key="frame" x="1" y="538" width="165" height="40"/>
@@ -179,6 +182,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-uW-pmT">
+                                <rect key="frame" x="335" y="543" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YHS-Dv-GzV">
                                 <rect key="frame" x="182" y="250" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -195,10 +202,13 @@
                                 <rect key="frame" x="182" y="140" width="200" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-uW-pmT">
-                                <rect key="frame" x="335" y="543" width="49" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="円" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBT-46-nC8">
+                                <rect key="frame" x="342" y="357" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7th-Yz-lYI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -221,6 +231,7 @@
                         <outlet property="ClassificationLabel3" destination="zFv-8W-0JY" id="g0I-7d-RXQ"/>
                         <outlet property="ClassificationLabel4" destination="ach-nP-1iu" id="xdT-QL-W7O"/>
                         <outlet property="ClassificationLabel5" destination="Jq1-ht-1EL" id="DWP-We-fYg"/>
+                        <outlet property="DatePicker" destination="VbN-MQ-1w2" id="AZm-xA-fqy"/>
                         <outlet property="IncomeClassPickerView" destination="eEb-k8-swl" id="sf5-Zx-ioD"/>
                         <outlet property="MethodPickerView" destination="YHS-Dv-GzV" id="b0M-Mv-VCK"/>
                         <outlet property="SpendingClassPickerView" destination="Z99-Qc-JCw" id="lcm-R9-cry"/>

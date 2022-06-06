@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     @IBOutlet var ClassificationLabel1: UILabel!
     @IBOutlet var ClassificationLabel2: UILabel!
@@ -19,17 +19,19 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet var MethodPickerView: UIPickerView!
     @IBOutlet var IncomeClassPickerView: UIPickerView!
+    
     @IBOutlet var SpendingClassPickerView: UIPickerView!
     
-    
-    @IBOutlet var chargeselect: UISwitch!
+    @IBOutlet var DatePicker:UIDatePicker!
     
     let methoddataList = ["現金","キャッシュレス","交通ICカード","その他"]
     let SpendingClassdataList = ["食費","交通費","交際費","娯楽費","その他"]
     let IncomeClassdataList = ["給料","お小遣い","臨時収入","副業","その他"]
     
     
+    @IBOutlet var chargeselect: UISwitch!
     
+    let defaults: UserDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,8 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         IncomeClassPickerView.isHidden = true
         
         moneyTextField.keyboardType = UIKeyboardType.numberPad
+        
+        moneyTextField.delegate = self
         
     }
     
@@ -125,6 +129,14 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return 1
     }
     
+    @IBAction func addmoneytext(_ sender: Any){
+        let writtenmoney = moneyTextField.text! as NSString
+        let defaults = UserDefaults.standard
+        defaults.set(writtenmoney, forKey: "AddValue")
+        view.endEditing(true)
+        
+    }
+    
     
     
     @IBAction func cancelButton(){
@@ -134,6 +146,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
+
         
     }
     
