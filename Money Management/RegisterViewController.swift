@@ -8,7 +8,11 @@
 import UIKit
 import RealmSwift
 
-class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+//class addmoney: Object{
+//    @Object dynamic var AddValue : Int? = nil
+//}
+
+class mViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var ClassificationLabel1: UILabel!
     @IBOutlet var ClassificationLabel2: UILabel!
@@ -31,19 +35,16 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     let SpendingClassdataList = ["食費","交通費","交際費","娯楽費","その他"]
     let IncomeClassdataList = ["給料","お小遣い","臨時収入","副業","その他"]
     
-    var addmoneyList: Results<addmoney>!
+  //  let date:Date = Date()
     
-    
-    class addmoney: Object{
-        @Object dynamic var AddValue : Int? = nil
-    }
+//    var addmoneyList: Results<addmoney>!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let realm = try! Realm()
-        self.addmoneyList = realm.objects(addmoney.self)
+  //      self.addmoneyList = realm.objects(addmoney.self)
         
         MethodPickerView.delegate = self
         MethodPickerView.dataSource = self
@@ -59,7 +60,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         IncomeClassPickerView.isHidden = true
         
         moneyTextField.keyboardType = UIKeyboardType.numberPad
-        
+
         
     }
     
@@ -79,6 +80,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             ClassificationLabel5.isHidden = true
             chargeselect.isHidden = true
             IncomeClassPickerView.isHidden = true
+            SpendingClassPickerView.isHidden = false
             
         case 1:
             ClassificationLabel1.text = "日付"
@@ -148,6 +150,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.dismiss(animated: true, completion: nil)
         
     }
+
     
     
     /*
