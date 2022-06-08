@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		827136772850720C00E7AD3A /* RealmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827136762850720C00E7AD3A /* RealmClass.swift */; };
 		82B8E43A284E35DB00454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E439284E35DB00454370 /* Realm */; };
 		82B8E43C284E35DB00454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E43B284E35DB00454370 /* RealmSwift */; };
 		82B8E43F284E361300454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E43E284E361300454370 /* Realm */; };
 		82B8E441284E361300454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E440284E361300454370 /* RealmSwift */; };
 		82B8E444284E3F1800454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E443284E3F1800454370 /* Realm */; };
 		82B8E446284E3F1800454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E445284E3F1800454370 /* RealmSwift */; };
-		82B8E44D284F86CA00454370 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B8E44C284F86CA00454370 /* EntryViewController.swift */; };
 		82EF8F86284C3970003384BC /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F85284C3970003384BC /* Eureka */; };
 		82EF8F89284E2FDB003384BC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F88284E2FDB003384BC /* RealmSwift */; };
 		B74048DE283CA16700535916 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = B74048DD283CA16700535916 /* Eureka */; };
@@ -50,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		82B8E44C284F86CA00454370 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		827136762850720C00E7AD3A /* RealmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmClass.swift; sourceTree = "<group>"; };
 		B74048E1284706D200535916 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
 		B7D4E9342839A85000F6CD92 /* Money Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D4E9372839A85000F6CD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 				B7D4E93B2839A85000F6CD92 /* ViewController.swift */,
 				B7D4E9672839A88D00F6CD92 /* ListViewController.swift */,
 				B7D4E9692839A8AF00F6CD92 /* RegisterViewController.swift */,
-				82B8E44C284F86CA00454370 /* EntryViewController.swift */,
 				B7D4E96B2839A8CB00F6CD92 /* ManagementViewController.swift */,
+				827136762850720C00E7AD3A /* RealmClass.swift */,
 				B7D4E93D2839A85000F6CD92 /* Main.storyboard */,
 				B7D4E9402839A85300F6CD92 /* Assets.xcassets */,
 				B7D4E9422839A85300F6CD92 /* LaunchScreen.storyboard */,
@@ -314,8 +314,8 @@
 				B7D4E93C2839A85000F6CD92 /* ViewController.swift in Sources */,
 				B7D4E96C2839A8CB00F6CD92 /* ManagementViewController.swift in Sources */,
 				B7D4E96A2839A8AF00F6CD92 /* RegisterViewController.swift in Sources */,
-				82B8E44D284F86CA00454370 /* EntryViewController.swift in Sources */,
 				B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */,
+				827136772850720C00E7AD3A /* RealmClass.swift in Sources */,
 				B7D4E9682839A88D00F6CD92 /* ListViewController.swift in Sources */,
 				B7D4E93A2839A85000F6CD92 /* SceneDelegate.swift in Sources */,
 			);

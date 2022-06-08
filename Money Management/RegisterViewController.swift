@@ -8,11 +8,7 @@
 import UIKit
 import RealmSwift
 
-//class addmoney: Object{
-//    @Object dynamic var AddValue : Int? = nil
-//}
-
-class mViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet var ClassificationLabel1: UILabel!
     @IBOutlet var ClassificationLabel2: UILabel!
@@ -35,16 +31,15 @@ class mViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     let SpendingClassdataList = ["食費","交通費","交際費","娯楽費","その他"]
     let IncomeClassdataList = ["給料","お小遣い","臨時収入","副業","その他"]
     
-  //  let date:Date = Date()
+    let realm = try! Realm()
     
-//    var addmoneyList: Results<addmoney>!
+   // var addmoneyList: Results<addmoney>!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let realm = try! Realm()
-  //      self.addmoneyList = realm.objects(addmoney.self)
+
+       // self.addmoneyList = realm.objects(addmoney.self)
         
         MethodPickerView.delegate = self
         MethodPickerView.dataSource = self
@@ -148,6 +143,15 @@ class mViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
+        
+        savemoney()
+        
+    }
+    
+    func savemoney(){
+        guard let moneyText = moneyTextField.text else { return }
+        let addmoney = Addmoney()
+        try! realm.write({realm.add(addmoney)})
         
     }
 

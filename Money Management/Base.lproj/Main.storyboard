@@ -121,7 +121,7 @@
         <!--登録-->
         <scene sceneID="7ID-X5-wks">
             <objects>
-                <viewController id="2Ok-Ef-jhO" sceneMemberID="viewController">
+                <viewController id="2Ok-Ef-jhO" customClass="RegisterViewController" customModule="Money_Management" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5fk-Ni-Fq5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -135,6 +135,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="SegmentedWithSender:" destination="crf-b7-ezB" eventType="valueChanged" id="B22-yf-EK3"/>
+                                    <action selector="SegmentedWithSender:" destination="2Ok-Ef-jhO" eventType="valueChanged" id="Qwl-BM-PH8"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金額" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFv-8W-0JY">
@@ -166,7 +167,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G85-Ty-zbg">
-                                <rect key="frame" x="182" y="360" width="165" height="34"/>
+                                <rect key="frame" x="151" y="360" width="196" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -178,24 +179,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-uW-pmT">
-                                <rect key="frame" x="335" y="543" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YHS-Dv-GzV">
-                                <rect key="frame" x="182" y="250" width="200" height="100"/>
+                                <rect key="frame" x="151" y="250" width="231" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEb-k8-swl">
-                                <rect key="frame" x="182" y="409" width="200" height="100"/>
+                                <rect key="frame" x="151" y="409" width="231" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z99-Qc-JCw">
-                                <rect key="frame" x="182" y="409" width="200" height="100"/>
+                                <rect key="frame" x="151" y="409" width="231" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="VbN-MQ-1w2">
-                                <rect key="frame" x="182" y="140" width="200" height="100"/>
+                                <rect key="frame" x="151" y="140" width="243" height="100"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="円" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iBT-46-nC8">
@@ -205,18 +202,43 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-uW-pmT">
+                                <rect key="frame" x="335" y="543" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7th-Yz-lYI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="登録" id="qC6-4s-fDi">
-                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="30u-y9-ipD"/>
-                        <barButtonItem key="rightBarButtonItem" title="保存" id="vJ6-mA-PCA"/>
+                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="30u-y9-ipD">
+                            <connections>
+                                <action selector="cancelButton" destination="2Ok-Ef-jhO" id="GCe-ww-vtg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="vJ6-mA-PCA">
+                            <connections>
+                                <action selector="saveButton" destination="2Ok-Ef-jhO" id="IiD-Qy-Xa5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ClassificationLabel1" destination="Gem-6b-lxd" id="d0O-cz-Ra9"/>
+                        <outlet property="ClassificationLabel2" destination="QUG-39-4jC" id="g4Y-vP-1ad"/>
+                        <outlet property="ClassificationLabel3" destination="zFv-8W-0JY" id="z5D-FG-X4K"/>
+                        <outlet property="ClassificationLabel4" destination="ach-nP-1iu" id="him-ZS-1gc"/>
+                        <outlet property="ClassificationLabel5" destination="Jq1-ht-1EL" id="zNT-lf-AWE"/>
+                        <outlet property="DatePicker" destination="VbN-MQ-1w2" id="eay-Zg-oef"/>
+                        <outlet property="IncomeClassPickerView" destination="eEb-k8-swl" id="e82-Wl-Qjg"/>
+                        <outlet property="MethodPickerView" destination="YHS-Dv-GzV" id="7yE-MY-xxf"/>
+                        <outlet property="SpendingClassPickerView" destination="Z99-Qc-JCw" id="U0Q-x6-oJ6"/>
+                        <outlet property="chargeselect" destination="Yuj-uW-pmT" id="kV5-Qs-AGr"/>
+                        <outlet property="moneyTextField" destination="G85-Ty-zbg" id="VLF-2W-HZa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fkc-cz-QeQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5113.04347826087" y="888.61607142857144"/>
+            <point key="canvasLocation" x="4204" y="889"/>
         </scene>
         <!--管理-->
         <scene sceneID="9qG-NE-S2J">
@@ -450,7 +472,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpe-mQ-oaU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4202.898550724638" y="888.61607142857144"/>
+            <point key="canvasLocation" x="3294" y="889"/>
         </scene>
     </scenes>
     <resources>
