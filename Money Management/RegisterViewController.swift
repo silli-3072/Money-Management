@@ -77,6 +77,11 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             IncomeClassPickerView.isHidden = true
             SpendingClassPickerView.isHidden = false
             
+            //収入か支出かをセグメントコントロールの選択で判断し、代入するデータベースを変更したい
+            //ここへ記述すると入力終了前に保存される？
+            
+            saveSpending()
+            
         case 1:
             ClassificationLabel1.text = "日付"
             ClassificationLabel2.text = "登録先"
@@ -89,6 +94,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             IncomeClassPickerView.isHidden = false
             SpendingClassPickerView.isHidden = true
             
+            saveIncome()
             
         default:
             print("該当なし")
@@ -144,14 +150,22 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
         
-        savemoney()
+    }
+    
+    func saveSpending(){
+        guard let moneyText = moneyTextField.text else { return }
+        let AddValue = saveSpending()
+        AddValue.AddValue = moneyText
+        try! realm.write({realm.add(AddValue)})
+        
+        guard let SpendingMethod = MethodPickerView.debugDescription else { return }
+        let PaymentMethod = saveSpending()
+        PaymentMethod. PaymentMethod = SpendingMethod
+        try! realm.write({realm.add(SpendingMethod)})
         
     }
     
-    func savemoney(){
-        guard let moneyText = moneyTextField.text else { return }
-        let addmoney = Addmoney()
-        try! realm.write({realm.add(addmoney)})
+    func saveIncome(){
         
     }
 
