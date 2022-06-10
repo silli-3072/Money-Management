@@ -1,21 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "eureka",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/xmartlabs/Eureka",
-      "state" : {
-        "revision" : "a7523afdfe38478c6d5706a8ac01d26590835493",
-        "version" : "5.3.6"
-      }
-    },
-    {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-core",
       "state" : {
-        "revision" : "fd48276f88f3d55dbdcdc9e8cbf32541811d5865",
-        "version" : "12.1.0"
+        "revision" : "66d79b3c5213fb14d491c1b22193077b488d49a6",
+        "version" : "6.2.4"
       }
     },
     {
@@ -23,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/realm/realm-swift",
       "state" : {
-        "branch" : "master",
-        "revision" : "0ec85448bb942837c4fb402febdf37fee65e7e54"
+        "revision" : "2dce752b48c3265c63ab04a8c66ddfdf9185f847",
+        "version" : "5.5.2"
       }
     }
   ],

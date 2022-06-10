@@ -9,15 +9,8 @@
 /* Begin PBXBuildFile section */
 		827136772850720C00E7AD3A /* RealmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827136762850720C00E7AD3A /* RealmClass.swift */; };
 		8271369B2851AABA00E7AD3A /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 8271369A2851AABA00E7AD3A /* icon */; };
-		82B8E43A284E35DB00454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E439284E35DB00454370 /* Realm */; };
-		82B8E43C284E35DB00454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E43B284E35DB00454370 /* RealmSwift */; };
-		82B8E43F284E361300454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E43E284E361300454370 /* Realm */; };
-		82B8E441284E361300454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E440284E361300454370 /* RealmSwift */; };
-		82B8E444284E3F1800454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E443284E3F1800454370 /* Realm */; };
-		82B8E446284E3F1800454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E445284E3F1800454370 /* RealmSwift */; };
-		82EF8F86284C3970003384BC /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F85284C3970003384BC /* Eureka */; };
-		82EF8F89284E2FDB003384BC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F88284E2FDB003384BC /* RealmSwift */; };
-		B74048DE283CA16700535916 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = B74048DD283CA16700535916 /* Eureka */; };
+		8271369E28531D1500E7AD3A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8271369D28531D1500E7AD3A /* Realm */; };
+		827136A028531D1500E7AD3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8271369F28531D1500E7AD3A /* RealmSwift */; };
 		B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9372839A85000F6CD92 /* AppDelegate.swift */; };
 		B7D4E93A2839A85000F6CD92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */; };
 		B7D4E93C2839A85000F6CD92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E93B2839A85000F6CD92 /* ViewController.swift */; };
@@ -75,15 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82B8E43F284E361300454370 /* Realm in Frameworks */,
-				82EF8F89284E2FDB003384BC /* RealmSwift in Frameworks */,
-				82B8E441284E361300454370 /* RealmSwift in Frameworks */,
-				82B8E446284E3F1800454370 /* RealmSwift in Frameworks */,
-				B74048DE283CA16700535916 /* Eureka in Frameworks */,
-				82B8E43A284E35DB00454370 /* Realm in Frameworks */,
-				82B8E43C284E35DB00454370 /* RealmSwift in Frameworks */,
-				82B8E444284E3F1800454370 /* Realm in Frameworks */,
-				82EF8F86284C3970003384BC /* Eureka in Frameworks */,
+				827136A028531D1500E7AD3A /* RealmSwift in Frameworks */,
+				8271369E28531D1500E7AD3A /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,15 +163,8 @@
 			);
 			name = "Money Management";
 			packageProductDependencies = (
-				B74048DD283CA16700535916 /* Eureka */,
-				82EF8F85284C3970003384BC /* Eureka */,
-				82EF8F88284E2FDB003384BC /* RealmSwift */,
-				82B8E439284E35DB00454370 /* Realm */,
-				82B8E43B284E35DB00454370 /* RealmSwift */,
-				82B8E43E284E361300454370 /* Realm */,
-				82B8E440284E361300454370 /* RealmSwift */,
-				82B8E443284E3F1800454370 /* Realm */,
-				82B8E445284E3F1800454370 /* RealmSwift */,
+				8271369D28531D1500E7AD3A /* Realm */,
+				8271369F28531D1500E7AD3A /* RealmSwift */,
 			);
 			productName = "Money Management";
 			productReference = B7D4E9342839A85000F6CD92 /* Money Management.app */;
@@ -260,12 +239,7 @@
 			);
 			mainGroup = B7D4E92B2839A85000F6CD92;
 			packageReferences = (
-				B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */,
-				82EF8F84284C3970003384BC /* XCRemoteSwiftPackageReference "Eureka" */,
-				82EF8F87284E2FDB003384BC /* XCRemoteSwiftPackageReference "realm-swift" */,
-				82B8E438284E35DB00454370 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				82B8E43D284E361300454370 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				82B8E442284E3F1800454370 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8271369C28531D1500E7AD3A /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = B7D4E9352839A85000F6CD92 /* Products */;
 			projectDirPath = "";
@@ -667,49 +641,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		82B8E438284E35DB00454370 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		8271369C28531D1500E7AD3A /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		82B8E43D284E361300454370 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		82B8E442284E3F1800454370 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		82EF8F84284C3970003384BC /* XCRemoteSwiftPackageReference "Eureka" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/xmartlabs/Eureka";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		82EF8F87284E2FDB003384BC /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/xmartlabs/Eureka";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
@@ -718,50 +652,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		82B8E439284E35DB00454370 /* Realm */ = {
+		8271369D28531D1500E7AD3A /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 82EF8F87284E2FDB003384BC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 8271369C28531D1500E7AD3A /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		82B8E43B284E35DB00454370 /* RealmSwift */ = {
+		8271369F28531D1500E7AD3A /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 82EF8F87284E2FDB003384BC /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 8271369C28531D1500E7AD3A /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
-		};
-		82B8E43E284E361300454370 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82B8E43D284E361300454370 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		82B8E440284E361300454370 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82B8E43D284E361300454370 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		82B8E443284E3F1800454370 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82B8E43D284E361300454370 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		82B8E445284E3F1800454370 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82B8E43D284E361300454370 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		82EF8F85284C3970003384BC /* Eureka */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */;
-			productName = Eureka;
-		};
-		82EF8F88284E2FDB003384BC /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 82EF8F87284E2FDB003384BC /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		B74048DD283CA16700535916 /* Eureka */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = B74048DC283CA16700535916 /* XCRemoteSwiftPackageReference "Eureka" */;
-			productName = Eureka;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

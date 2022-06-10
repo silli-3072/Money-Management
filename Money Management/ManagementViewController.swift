@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ManagementViewController: UIViewController {
     
@@ -25,6 +26,8 @@ class ManagementViewController: UIViewController {
     @IBOutlet var moneyclass3Label: UILabel!
     @IBOutlet var moneyclass4Label: UILabel!
     @IBOutlet var moneyclass5Label: UILabel!
+    
+    let realm = try! Realm()
     
     
     override func viewDidLoad() {
