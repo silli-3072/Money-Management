@@ -10,8 +10,10 @@ import RealmSwift
 
 class ManagementViewController: UIViewController {
     
-    //カレンダーの取得
-    //let calendar = Calendar(identifier: .japanese)
+    
+    let calendar = Calendar(identifier: .gregorian)
+    let ManagementMonth = Date()
+    let month = Calendar.current.component(.month, from: ManagementMonth)
     
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
@@ -32,6 +34,8 @@ class ManagementViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        monthLabel.text = month
         
         // Do any additional setup after loading the view.
     }
@@ -58,6 +62,7 @@ class ManagementViewController: UIViewController {
     }
     
     @IBAction func NextMonthButton(){
+       
         
     }
     

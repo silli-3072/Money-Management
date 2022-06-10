@@ -37,8 +37,9 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       // self.addmoneyList = realm.objects(addmoney.self)
+        
+        //テキストフィールドの右詰を指定
+        moneyTextField.textAlignment = NSTextAlignment.right
         
         MethodPickerView.delegate = self
         MethodPickerView.dataSource = self
@@ -177,9 +178,10 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.dismiss(animated: true, completion: nil)
         
     }
+   
     func saveSpending(){
         //日付
-        guard let dataText = DatePicker.selectedRow else { return }
+        guard let dataText = DatePicker.hashValue else { return }
         let SpendingDay = StorageSpending()
         SpendingDay.SpendingDay = dataText
         try! realm.write({realm.add(SpendingDay)})
@@ -193,7 +195,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         //金額(Int型で保存したけどエラーが出るのでStringで保存中)
         guard let moneyText = moneyTextField.text else { return }
         let PullValue = StorageSpending()
-        PullValue.AddValue = moneyText
+        PullValue.PullValue = moneyText
         try! realm.write({realm.add(PullValue)})
         
         //分類
