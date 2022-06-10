@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		827136772850720C00E7AD3A /* RealmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827136762850720C00E7AD3A /* RealmClass.swift */; };
+		8271369B2851AABA00E7AD3A /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 8271369A2851AABA00E7AD3A /* icon */; };
 		82B8E43A284E35DB00454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E439284E35DB00454370 /* Realm */; };
 		82B8E43C284E35DB00454370 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E43B284E35DB00454370 /* RealmSwift */; };
 		82B8E43F284E361300454370 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 82B8E43E284E361300454370 /* Realm */; };
@@ -17,7 +18,6 @@
 		82EF8F86284C3970003384BC /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F85284C3970003384BC /* Eureka */; };
 		82EF8F89284E2FDB003384BC /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 82EF8F88284E2FDB003384BC /* RealmSwift */; };
 		B74048DE283CA16700535916 /* Eureka in Frameworks */ = {isa = PBXBuildFile; productRef = B74048DD283CA16700535916 /* Eureka */; };
-		B74048E2284706D200535916 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B74048E1284706D200535916 /* icon.png */; };
 		B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9372839A85000F6CD92 /* AppDelegate.swift */; };
 		B7D4E93A2839A85000F6CD92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */; };
 		B7D4E93C2839A85000F6CD92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E93B2839A85000F6CD92 /* ViewController.swift */; };
@@ -51,7 +51,7 @@
 
 /* Begin PBXFileReference section */
 		827136762850720C00E7AD3A /* RealmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmClass.swift; sourceTree = "<group>"; };
-		B74048E1284706D200535916 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = SOURCE_ROOT; };
+		8271369A2851AABA00E7AD3A /* icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icon; sourceTree = SOURCE_ROOT; };
 		B7D4E9342839A85000F6CD92 /* Money Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D4E9372839A85000F6CD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		B7D4E9362839A85000F6CD92 /* Money Management */ = {
 			isa = PBXGroup;
 			children = (
-				B74048E1284706D200535916 /* icon.png */,
+				8271369A2851AABA00E7AD3A /* icon */,
 				B7D4E9372839A85000F6CD92 /* AppDelegate.swift */,
 				B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */,
 				B7D4E93B2839A85000F6CD92 /* ViewController.swift */,
@@ -283,8 +283,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B74048E2284706D200535916 /* icon.png in Resources */,
 				B7D4E9442839A85300F6CD92 /* LaunchScreen.storyboard in Resources */,
+				8271369B2851AABA00E7AD3A /* icon in Resources */,
 				B7D4E9412839A85300F6CD92 /* Assets.xcassets in Resources */,
 				B7D4E93F2839A85000F6CD92 /* Main.storyboard in Resources */,
 			);

@@ -20,7 +20,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet var MethodPickerView: UIPickerView!
     @IBOutlet var IncomeClassPickerView: UIPickerView!
-    
     @IBOutlet var SpendingClassPickerView: UIPickerView!
     
     @IBOutlet var DatePicker:UIDatePicker!
@@ -145,28 +144,92 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
         
+        
+        let SpendingDay = realm.objects(StorageSpending.self).filter("id = '1'")
+        let PaymentMethod = realm.objects(StorageSpending.self).filter("id = '1'")
+        let PullValue = realm.objects(StorageSpending.self).filter("id = '1'")
+        let Group = realm.objects(StorageSpending.self).filter("id = '1'")
+        
+        let IncomeDay = realm.objects(StorageIncome.self).filter("id = '1'")
+        let IncomeMethod = realm.objects(StorageIncome.self).filter("id = '1'")
+        let AddValue = realm.objects(StorageIncome.self).filter("id = '1'")
+        let IncomeGroup = realm.objects(StorageIncome.self).filter("id = '1'")
+        
+        try! realm.write {
+            realm.delete(SpendingDay)
+            realm.delete(PaymentMethod)
+            realm.delete(PullValue)
+            realm.delete(Group)
+            
+            realm.delete(IncomeDay)
+            realm.delete(IncomeMethod)
+            realm.delete(AddValue)
+            realm.delete(IncomeGroup)
+        }
+        
     }
     
     @IBAction func saveButton(){
+      //  guard let _ = moneyTextField.text else { return }
+      //  guard let _ = MethodPickerView.debugDescription else { return }
+        
+        saveSpending()
         self.dismiss(animated: true, completion: nil)
         
     }
-    
     func saveSpending(){
-        guard let moneyText = moneyTextField.text else { return }
-        let AddValue = saveSpending()
-        AddValue.AddValue = moneyText
-        try! realm.write({realm.add(AddValue)})
+        //日付
+        guard let dataText = DatePicker.selectedRow else { return }
+        let SpendingDay = StorageSpending()
+        SpendingDay.SpendingDay = dataText
+        try! realm.write({realm.add(SpendingDay)})
         
-        guard let SpendingMethod = MethodPickerView.debugDescription else { return }
-        let PaymentMethod = saveSpending()
-        PaymentMethod. PaymentMethod = SpendingMethod
-        try! realm.write({realm.add(SpendingMethod)})
+        //方法
+        guard let SpendingMethod = MethodPickerView.selectedRow else { return }
+        let PaymentMethod = StorageSpending()
+        PaymentMethod.PaymentMethod = SpendingMethod
+        try! realm.write({realm.add(PaymentMethod)})
+        
+        //金額(Int型で保存したけどエラーが出るのでStringで保存中)
+        guard let moneyText = moneyTextField.text else { return }
+        let PullValue = StorageSpending()
+        PullValue.AddValue = moneyText
+        try! realm.write({realm.add(PullValue)})
+        
+        //分類
+        guard let GroupMethod = SpendingClassPickerView.selectedRow else { return }
+        let Group = StorageSpending()
+        Group.PaymentMethod = GroupMethod
+        try! realm.write({realm.add(Group)})
+        
+        
         
     }
     
     func saveIncome(){
+        //日付
+        guard let dataText = DatePicker.selectedRow else { return }
+        let IncomeDay = StorageIncome()
+        IncomeDay.IncomeDay = dataText
+        try! realm.write({realm.add(IncomeDay)})
         
+        //方法
+        guard let IncomeMethod = MethodPickerView.selectedRow else { return }
+        let IncomeMethod = StorageIncome()
+        IncomeMethod.PaymentMethod = IncomeMethod
+        try! realm.write({realm.add(IncomeMethod)})
+        
+        //金額(Int型で保存したけどエラーが出るのでStringで保存中)
+        guard let moneyText = moneyTextField.text else { return }
+        let AddValue = StorageIncome()
+        AddValue.AddValue = moneyText
+        try! realm.write({realm.add(AddValue)})
+        
+        //分類
+        guard let GroupMethod = SpendingClassPickerView.selectedRow else { return }
+        let IncomeGroup = StorageIncome()
+        IncomeGroup.PaymentMethod = GroupMethod
+        try! realm.write({realm.add(IncomeGroup)})
     }
 
     
