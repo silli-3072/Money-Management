@@ -32,7 +32,13 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     let realm = try! Realm()
     
-   // var addmoneyList: Results<addmoney>!
+    let incomeClassPickerViewSelectedRow:Int = 0
+    
+    //letをvarにするとピッカー選択の値取得する部分のエラーが消える。
+    //どうして質問時はletでエラーが出なかった？
+    var methodPickerViewSelectedRow = 0
+    var groupPickerViewSelectedRow = 0
+    
 
     
     override func viewDidLoad() {
@@ -77,10 +83,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             IncomeClassPickerView.isHidden = true
             SpendingClassPickerView.isHidden = false
             
-            //収入か支出かをセグメントコントロールの選択で判断し、代入するデータベースを変更したい
-            //ここへ記述すると入力終了前に保存される？
             
-            saveSpending()
             
         case 1:
             ClassificationLabel1.text = "日付"
@@ -93,8 +96,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             chargeselect.isHidden = false
             IncomeClassPickerView.isHidden = false
             SpendingClassPickerView.isHidden = true
-            
-            saveIncome()
             
         default:
             print("該当なし")
@@ -136,10 +137,15 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return nil
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        methodPickerViewSelectedRow = row
+        
+        groupPickerViewSelectedRow = row
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-        
     
     
     @IBAction func cancelButton(){
@@ -171,67 +177,51 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func saveButton(){
-      //  guard let _ = moneyTextField.text else { return }
-      //  guard let _ = MethodPickerView.debugDescription else { return }
-        
-        saveSpending()
         self.dismiss(animated: true, completion: nil)
+        
+        //収入画面か支出画面かで条件分岐
+        saveSpending()
+        saveIncome()
+        Switch()
         
     }
    
     func saveSpending(){
+        let paymentS = StorageSpending()
         //日付
-        guard let dataText = DatePicker.hashValue else { return }
-        let SpendingDay = StorageSpending()
-        SpendingDay.SpendingDay = dataText
-        try! realm.write({realm.add(SpendingDay)})
-        
+        paymentS.SpendingDay = DatePicker.date
         //方法
-        guard let SpendingMethod = MethodPickerView.selectedRow else { return }
-        let PaymentMethod = StorageSpending()
-        PaymentMethod.PaymentMethod = SpendingMethod
-        try! realm.write({realm.add(PaymentMethod)})
-        
-        //金額(Int型で保存したけどエラーが出るのでStringで保存中)
-        guard let moneyText = moneyTextField.text else { return }
-        let PullValue = StorageSpending()
-        PullValue.PullValue = moneyText
-        try! realm.write({realm.add(PullValue)})
-        
+        paymentS.PaymentMethod = String(methodPickerViewSelectedRow)
+        //金額
+        guard let value = moneyTextField.text else { return  }
+        paymentS.PullValue = Int(value) ?? 0
         //分類
-        guard let GroupMethod = SpendingClassPickerView.selectedRow else { return }
-        let Group = StorageSpending()
-        Group.PaymentMethod = GroupMethod
-        try! realm.write({realm.add(Group)})
+        paymentS.Group = String(groupPickerViewSelectedRow)
         
-        
-        
+        try! realm.write({realm.add(paymentS)})
     }
     
     func saveIncome(){
+        let paymentI = StorageIncome()
         //日付
-        guard let dataText = DatePicker.selectedRow else { return }
-        let IncomeDay = StorageIncome()
-        IncomeDay.IncomeDay = dataText
-        try! realm.write({realm.add(IncomeDay)})
-        
+        paymentI.IncomeDay = DatePicker.date
         //方法
-        guard let IncomeMethod = MethodPickerView.selectedRow else { return }
-        let IncomeMethod = StorageIncome()
-        IncomeMethod.PaymentMethod = IncomeMethod
-        try! realm.write({realm.add(IncomeMethod)})
-        
+        paymentI.IncomeMethod = String(methodPickerViewSelectedRow)
         //金額(Int型で保存したけどエラーが出るのでStringで保存中)
-        guard let moneyText = moneyTextField.text else { return }
-        let AddValue = StorageIncome()
-        AddValue.AddValue = moneyText
-        try! realm.write({realm.add(AddValue)})
-        
+        guard let value = moneyTextField.text else { return  }
+        paymentI.AddValue = Int(value) ?? 0
         //分類
-        guard let GroupMethod = SpendingClassPickerView.selectedRow else { return }
-        let IncomeGroup = StorageIncome()
-        IncomeGroup.PaymentMethod = GroupMethod
-        try! realm.write({realm.add(IncomeGroup)})
+        paymentI.IncomeGroup = String(groupPickerViewSelectedRow)
+        
+        try! realm.write({realm.add(paymentI)})
+    }
+    
+    //どこで実行？
+    func Switch(){
+        if chargeselect.isOn == false{
+            //現金残高からマイナス
+        }
+        
     }
 
     
