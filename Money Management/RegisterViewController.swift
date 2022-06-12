@@ -34,10 +34,10 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     let incomeClassPickerViewSelectedRow:Int = 0
     
-    //letをvarにするとピッカー選択の値取得する部分のエラーが消える。
-    //どうして質問時はletでエラーが出なかった？
+  
     var methodPickerViewSelectedRow = 0
     var groupPickerViewSelectedRow = 0
+    var incomePickerViewSelectedRow = 0
     
 
     
@@ -139,8 +139,8 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         methodPickerViewSelectedRow = row
-        
         groupPickerViewSelectedRow = row
+        incomePickerViewSelectedRow = row
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -150,29 +150,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBAction func cancelButton(){
         self.dismiss(animated: true, completion: nil)
-        
-        
-        let SpendingDay = realm.objects(StorageSpending.self).filter("id = '1'")
-        let PaymentMethod = realm.objects(StorageSpending.self).filter("id = '1'")
-        let PullValue = realm.objects(StorageSpending.self).filter("id = '1'")
-        let Group = realm.objects(StorageSpending.self).filter("id = '1'")
-        
-        let IncomeDay = realm.objects(StorageIncome.self).filter("id = '1'")
-        let IncomeMethod = realm.objects(StorageIncome.self).filter("id = '1'")
-        let AddValue = realm.objects(StorageIncome.self).filter("id = '1'")
-        let IncomeGroup = realm.objects(StorageIncome.self).filter("id = '1'")
-        
-        try! realm.write {
-            realm.delete(SpendingDay)
-            realm.delete(PaymentMethod)
-            realm.delete(PullValue)
-            realm.delete(Group)
-            
-            realm.delete(IncomeDay)
-            realm.delete(IncomeMethod)
-            realm.delete(AddValue)
-            realm.delete(IncomeGroup)
-        }
         
     }
     
@@ -211,7 +188,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         guard let value = moneyTextField.text else { return  }
         paymentI.AddValue = Int(value) ?? 0
         //分類
-        paymentI.IncomeGroup = String(groupPickerViewSelectedRow)
+        paymentI.IncomeGroup = String(incomePickerViewSelectedRow)
         
         try! realm.write({realm.add(paymentI)})
     }

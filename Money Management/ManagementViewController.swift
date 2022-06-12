@@ -11,9 +11,10 @@ import RealmSwift
 class ManagementViewController: UIViewController {
     
     
-    let calendar = Calendar(identifier: .gregorian)
-    let ManagementMonth = Date()
-    //let month = Calendar.current.component(.month, from: ManagementMonth)
+    //let calendar = Calendar(identifier: .gregorian)
+    //let date = Date()
+    //let year = Calendar.current.component(.year, from: date)
+    //let month = calendar.current.component(.month, from: date)
     
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
@@ -36,8 +37,7 @@ class ManagementViewController: UIViewController {
         super.viewDidLoad()
         
         //monthLabel.text = month
-        
-        // Do any additional setup after loading the view.
+    
     }
     
     @IBAction func Segmented(sender: UISegmentedControl){
