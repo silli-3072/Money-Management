@@ -84,7 +84,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             SpendingClassPickerView.isHidden = false
             
             
-            
         case 1:
             ClassificationLabel1.text = "日付"
             ClassificationLabel2.text = "登録先"
@@ -96,6 +95,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             chargeselect.isHidden = false
             IncomeClassPickerView.isHidden = false
             SpendingClassPickerView.isHidden = true
+            
             
         default:
             print("該当なし")
@@ -156,11 +156,15 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
         
-        //収入画面か支出画面かで条件分岐
-        saveSpending()
-        saveIncome()
-        Switch()
+        //値の取得をしたいけどエラーが
+        let selectedIndex = Segmented.selectedSegmentIndex
         
+        if selectedIndex == 0 {
+            saveSpending()
+        } else if selectedIndex == 1 {
+            saveIncome()
+            Switch()
+        }
     }
    
     func saveSpending(){
