@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		827136772850720C00E7AD3A /* RealmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827136762850720C00E7AD3A /* RealmClass.swift */; };
-		8271369B2851AABA00E7AD3A /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 8271369A2851AABA00E7AD3A /* icon */; };
 		827136A3285472A200E7AD3A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 827136A2285472A200E7AD3A /* Realm */; };
 		827136A5285472A200E7AD3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 827136A4285472A200E7AD3A /* RealmSwift */; };
 		B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9372839A85000F6CD92 /* AppDelegate.swift */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		827136762850720C00E7AD3A /* RealmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmClass.swift; sourceTree = "<group>"; };
-		8271369A2851AABA00E7AD3A /* icon */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = icon; sourceTree = SOURCE_ROOT; };
 		B7D4E9342839A85000F6CD92 /* Money Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D4E9372839A85000F6CD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		B7D4E9362839A85000F6CD92 /* Money Management */ = {
 			isa = PBXGroup;
 			children = (
-				8271369A2851AABA00E7AD3A /* icon */,
 				B7D4E9372839A85000F6CD92 /* AppDelegate.swift */,
 				B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */,
 				B7D4E93B2839A85000F6CD92 /* ViewController.swift */,
@@ -258,7 +255,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7D4E9442839A85300F6CD92 /* LaunchScreen.storyboard in Resources */,
-				8271369B2851AABA00E7AD3A /* icon in Resources */,
 				B7D4E9412839A85300F6CD92 /* Assets.xcassets in Resources */,
 				B7D4E93F2839A85000F6CD92 /* Main.storyboard in Resources */,
 			);

@@ -9,17 +9,17 @@ import Foundation
 import RealmSwift
 
 class StorageSpending: Object{
-    @objc dynamic var SpendingDay = Date()
-    @objc dynamic var PaymentMethod: String = ""
+    @objc dynamic var SpendingDay = ""
+    @objc dynamic var PaymentMethod = ""
     @objc dynamic var PullValue: Int = 0
-    @objc dynamic var Group: String = ""
+    @objc dynamic var Group = ""
     
 }
 
 class StorageIncome: Object{
-    @objc dynamic var IncomeDay = Date()
-    @objc dynamic var IncomeMethod: String = ""
+    @objc dynamic var IncomeDay = ""
+    @objc dynamic var IncomeMethod = ""
     @objc dynamic var AddValue: Int = 0
-    @objc dynamic var IncomeGroup: String = ""
+    @objc dynamic var IncomeGroup = ""
     
 }

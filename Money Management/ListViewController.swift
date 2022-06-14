@@ -24,49 +24,108 @@ class ListViewController: UIViewController {
     let PaymentMethod = RegisterViewController()
     let IncomeMethod = RegisterViewController()
     
+    var pullResults:Results<StorageSpending>!
+    var addResults:Results<StorageIncome>!
+    
+    var cashSum = 0
+    var cachlessSum = 0
+    var icCardSum = 0
+    var othersSum = 0
+    
+    var incomecashSum = 0
+    var incomecachlessSum = 0
+    var incomeicCardSum = 0
+    var incomeothersSum = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        moneyText()
+        pullResults = realm.objects(StorageSpending.self)
+        addResults = realm.objects(StorageIncome.self)
         
+        labelview()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        moneyText()
+        pullResults = realm.objects(StorageSpending.self)
+        addResults = realm.objects(StorageIncome.self)
         
-        //支出
-        //現金
-        let pullresultsCash = realm.objects(StorageSpending.self).filter{$0.PaymentMethod == "0"}
-        print(pullresultsCash)
-        //キャッシュレス
-        let pullresultsCashless = realm.objects(StorageSpending.self).filter{$0.PaymentMethod == "1"}
-        print(pullresultsCashless)
-        //交通ICカード
-        let pullresultsIcCard = realm.objects(StorageSpending.self).filter{$0.PaymentMethod == "2"}
-        print(pullresultsIcCard)
-        //その他
-        let pullresultsothers = realm.objects(StorageSpending.self).filter{$0.PaymentMethod == "3"}
-        print(pullresultsothers)
+       labelview()
         
-        //支出
-        //現金
-        let addresultsCash = realm.objects(StorageIncome.self).filter{$0.IncomeMethod == "0"}
-        print(addresultsCash)
-        //キャッシュレス
-        let addresultsCashless = realm.objects(StorageIncome.self).filter{$0.IncomeMethod == "1"}
-        print(addresultsCashless)
-        //交通ICカード
-        let addresultsIcCard = realm.objects(StorageIncome.self).filter{$0.IncomeMethod == "2"}
-        print(addresultsIcCard)
-        //その他
-        let addresultsothers = realm.objects(StorageIncome.self).filter{$0.IncomeMethod == "3"}
-        print(addresultsothers)
+        print("💔",pullResults)
+    }
+
+    func someValue(){
+        for i in 0..<pullResults.count{
+            let item:StorageSpending = self.pullResults[i]
+            if item.PaymentMethod == "0"{
+                cashSum -= item.PullValue
+            } else if item.PaymentMethod == "1" {
+                cachlessSum -= item.PullValue
+            } else if item.PaymentMethod == "2" {
+                icCardSum -= item.PullValue
+            } else if item.PaymentMethod == "3" {
+                othersSum -= item.PullValue
+            }
+        }
+        
+        print("😅",cashSum)
+        print("💤",cachlessSum)
+        print("💨",icCardSum)
+        print("📩",othersSum)
         
     }
     
-    func moneyText(){
+    func incomeValue(){
+        for i in 0..<addResults.count{
+            let item:StorageIncome = self.addResults[i]
+            
+            if item.IncomeMethod == "0"{
+                incomecashSum += item.AddValue
+            } else if item.IncomeMethod == "1" {
+                incomecachlessSum += item.AddValue
+            } else if item.IncomeMethod == "2" {
+                incomeicCardSum += item.AddValue
+            } else if item.IncomeMethod == "3" {
+                incomeothersSum += item.AddValue
+            }
+            
+        }
+        
+        print("👍",incomecashSum)
+        print("☀️",incomecachlessSum)
+        print("🎤",incomeicCardSum)
+        print("🎂",incomeothersSum)
         
     }
-
+    
+    func labelview(){
+        someValue()
+        incomeValue()
+        
+        let incometotal = incomecashSum + incomecachlessSum + incomeicCardSum + incomeothersSum
+        let spendingtotal = cashSum + cachlessSum + icCardSum + othersSum
+        let total = incometotal + spendingtotal
+        
+        
+        listMoneyLabell1.text = "\(total)円"
+        listMoneyLabell2.text = "\(incomecashSum + cashSum)円"
+        listMoneyLabell3.text = "\(incomecachlessSum + cachlessSum)円"
+        listMoneyLabell4.text = "\(incomeicCardSum + icCardSum)円"
+        listMoneyLabell5.text = "\(incomeothersSum + othersSum)円"
+        
+        
+        cashSum = 0
+        cachlessSum = 0
+        icCardSum = 0
+        othersSum = 0
+        
+        incomecashSum = 0
+        incomecachlessSum = 0
+        incomeicCardSum = 0
+        incomeothersSum = 0
+        
+    }
+    
 }

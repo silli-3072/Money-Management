@@ -14,7 +14,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet var ClassificationLabel2: UILabel!
     @IBOutlet var ClassificationLabel3: UILabel!
     @IBOutlet var ClassificationLabel4: UILabel!
-    @IBOutlet var ClassificationLabel5: UILabel!
     
     @IBOutlet var moneyTextField: UITextField!
     
@@ -24,7 +23,8 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet var DatePicker:UIDatePicker!
     
-    @IBOutlet var chargeselect: UISwitch!
+    
+    @IBOutlet var Segmented: UISegmentedControl!
     
     let methoddataList = ["現金","キャッシュレス","交通ICカード","その他"]
     let SpendingClassdataList = ["食費","交通費","交際費","娯楽費","その他"]
@@ -56,8 +56,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         IncomeClassPickerView.delegate = self
         IncomeClassPickerView.dataSource = self
         
-        ClassificationLabel5.isHidden = true
-        chargeselect.isHidden = true
         IncomeClassPickerView.isHidden = true
         
         moneyTextField.keyboardType = UIKeyboardType.numberPad
@@ -70,7 +68,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.view.endEditing(true)
     }
     
-    @IBAction func Segmented(sender: UISegmentedControl){
+    @IBAction func SegmentedTapped(sender: UISegmentedControl){
         switch sender.selectedSegmentIndex{
         case 0:
             ClassificationLabel1.text = "日付"
@@ -78,8 +76,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             ClassificationLabel3.text = "金額"
             ClassificationLabel4.text = "分類"
             
-            ClassificationLabel5.isHidden = true
-            chargeselect.isHidden = true
             IncomeClassPickerView.isHidden = true
             SpendingClassPickerView.isHidden = false
             
@@ -89,10 +85,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
             ClassificationLabel2.text = "登録先"
             ClassificationLabel3.text = "金額"
             ClassificationLabel4.text = "分類"
-            ClassificationLabel5.text = "現金残高から引く"
             
-            ClassificationLabel5.isHidden = false
-            chargeselect.isHidden = false
             IncomeClassPickerView.isHidden = false
             SpendingClassPickerView.isHidden = true
             
@@ -156,21 +149,24 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBAction func saveButton(){
         self.dismiss(animated: true, completion: nil)
         
-        //値の取得をしたいけどエラーが
         let selectedIndex = Segmented.selectedSegmentIndex
         
         if selectedIndex == 0 {
             saveSpending()
+            print("✊",Segmented.selectedSegmentIndex)
         } else if selectedIndex == 1 {
             saveIncome()
-            Switch()
+            print("###",Segmented.selectedSegmentIndex)
         }
     }
    
     func saveSpending(){
         let paymentS = StorageSpending()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy年M月d日", options: 0, locale: Locale(identifier:"ja_JP"))
         //日付
-        paymentS.SpendingDay = DatePicker.date
+        paymentS.SpendingDay = formatter.string(from: DatePicker.date)
         //方法
         paymentS.PaymentMethod = String(methodPickerViewSelectedRow)
         //金額
@@ -180,15 +176,19 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         paymentS.Group = String(groupPickerViewSelectedRow)
         
         try! realm.write({realm.add(paymentS)})
+        
     }
     
     func saveIncome(){
         let paymentI = StorageIncome()
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "yyyy年M月d日", options: 0, locale: Locale(identifier:"ja_JP"))
         //日付
-        paymentI.IncomeDay = DatePicker.date
+        paymentI.IncomeDay = formatter.string(from: DatePicker.date)
         //方法
         paymentI.IncomeMethod = String(methodPickerViewSelectedRow)
-        //金額(Int型で保存したけどエラーが出るのでStringで保存中)
+        //金額
         guard let value = moneyTextField.text else { return  }
         paymentI.AddValue = Int(value) ?? 0
         //分類
@@ -196,16 +196,6 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         try! realm.write({realm.add(paymentI)})
     }
-    
-    //どこで実行？
-    func Switch(){
-        if chargeselect.isOn == false{
-            //現金残高からマイナス
-        }
-        
-    }
-
-    
     
     /*
      // MARK: - Navigation
