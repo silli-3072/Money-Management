@@ -10,7 +10,6 @@
 		827136772850720C00E7AD3A /* RealmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827136762850720C00E7AD3A /* RealmClass.swift */; };
 		827136A3285472A200E7AD3A /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 827136A2285472A200E7AD3A /* Realm */; };
 		827136A5285472A200E7AD3A /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 827136A4285472A200E7AD3A /* RealmSwift */; };
-		82BC93992859965900F948B9 /* AppIcons in Resources */ = {isa = PBXBuildFile; fileRef = 82BC93982859965900F948B9 /* AppIcons */; };
 		B7D4E9382839A85000F6CD92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9372839A85000F6CD92 /* AppDelegate.swift */; };
 		B7D4E93A2839A85000F6CD92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */; };
 		B7D4E93C2839A85000F6CD92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D4E93B2839A85000F6CD92 /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		827136762850720C00E7AD3A /* RealmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmClass.swift; sourceTree = "<group>"; };
-		82BC93982859965900F948B9 /* AppIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcons; path = ../../../Downloads/AppIcons; sourceTree = "<group>"; };
 		B7D4E9342839A85000F6CD92 /* Money Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D4E9372839A85000F6CD92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 		B7D4E9362839A85000F6CD92 /* Money Management */ = {
 			isa = PBXGroup;
 			children = (
-				82BC93982859965900F948B9 /* AppIcons */,
 				B7D4E9372839A85000F6CD92 /* AppDelegate.swift */,
 				B7D4E9392839A85000F6CD92 /* SceneDelegate.swift */,
 				B7D4E93B2839A85000F6CD92 /* ViewController.swift */,
@@ -257,7 +254,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82BC93992859965900F948B9 /* AppIcons in Resources */,
 				B7D4E9442839A85300F6CD92 /* LaunchScreen.storyboard in Resources */,
 				B7D4E9412839A85300F6CD92 /* Assets.xcassets in Resources */,
 				B7D4E93F2839A85000F6CD92 /* Main.storyboard in Resources */,

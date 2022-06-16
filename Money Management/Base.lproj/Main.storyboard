@@ -487,7 +487,7 @@
                         <outlet property="moneyclass5Label" destination="v3q-Pw-ovJ" id="eBm-aL-JUI"/>
                         <outlet property="monthLabel" destination="Ywf-DT-gCd" id="MbD-nd-49k"/>
                         <outlet property="segmented" destination="Duu-3k-0wb" id="P6Q-dU-wAx"/>
-                        <outlet property="totalLabel" destination="Lsf-Pd-f3f" id="KSC-Vr-4MW"/>
+                        <outlet property="totalLabel" destination="2Kf-8y-HdW" id="Vei-aM-ssQ"/>
                         <outlet property="totalmoneyLabel" destination="2Kf-8y-HdW" id="CZd-UW-iKk"/>
                     </connections>
                 </viewController>

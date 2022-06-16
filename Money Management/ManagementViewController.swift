@@ -176,6 +176,9 @@ class ManagementViewController: UIViewController {
         func viewSumSpending(){
             sumSpending()
             
+            let spendingAll = syokuhiSum + koutuuhiSum + kousaihiSum + gorakuhiSum + othersSum
+            
+            totalLabel.text = "\(spendingAll)円"
             moneyclass1Label.text = "\(syokuhiSum)円"
             moneyclass2Label.text = "\(koutuuhiSum)円"
             moneyclass3Label.text = "\(kousaihiSum)円"
@@ -192,6 +195,9 @@ class ManagementViewController: UIViewController {
         func viewSumIncome(){
             sumIncome()
             
+            let incomeAll = kyuryouSum + okozukaiSum + rinziSum + hukugyouSum + incomeOthersSum
+            
+            totalLabel.text = "\(incomeAll)円"
             moneyclass1Label.text = "\(kyuryouSum)円"
             moneyclass2Label.text = "\(okozukaiSum)円"
             moneyclass3Label.text = "\(rinziSum)円"
